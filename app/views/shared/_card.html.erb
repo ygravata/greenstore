@@ -1,19 +1,19 @@
-  <div class="cards">
-    <div>
-      <%= link_to "New Cannabis", '#', {:class => "card-category", :style => "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519181236443-b175d4c3ca1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" } %>
+<div class="cards">
+  <%= link_to '#', :style=>"text-decoration: none;" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519181236443-b175d4c3ca1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" >
+      New Cannabis
     </div>
+  <% end %>
 
-      <%= link_to '#' do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519181236443-b175d4c3ca1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" >
-          New Cannabis
-        </div>
-      <% end %>
-
-    <div>
-      <%= link_to "Bestsellers", '#', {:class => "card-category", :style => "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1503262028195-93c528f03218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);" } %>
+  <%= link_to '#',:style=>"text-decoration: none;" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1503262028195-93c528f03218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);" >
+      Best Sellers
     </div>
+  <% end %>
 
-    <div>
-      <%= link_to "Buy in a Bulk", '#', {:class => "card-category", :style => "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" } %>
+  <%= link_to '#',:style=>"text-decoration: none;" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" >
+      Buy in a Bulk
     </div>
-  </div>
+  <% end %>
+</div>
