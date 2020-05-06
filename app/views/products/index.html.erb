@@ -1,0 +1,6 @@
+<!-- <h1><%= params[:category].present? ? params[:category] : "All weed" %></h1> -->
+<% @products.each do |product| %>
+  <%= product.name %>
+  <%= product.price %>
+  <%= product.category %>
+<% end %>
