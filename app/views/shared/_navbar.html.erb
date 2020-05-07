@@ -2,13 +2,13 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://i.ibb.co/44f2f9B/green-store.png", :style=>"margin-left: -45px; width:400px; :height:90px;" %>
   <% end %>
-  <form class="form-inline my-2 my-lg-0" style="margin: 90px 80px 0px -20px">
+  <form class="form-inline my-2 my-lg-0" style="margin: 90px 80px 0px -20px; padding-top: 20px;">
     <input class="form-control mr-sm-2" style="width: 600px;" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 
   <% if user_signed_in? %>
-    <li class="nav-item dropdown" style="list-style: none;">
+    <li class="nav-item dropdown" style="list-style: none;padding-top: 20px;">
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -17,7 +17,7 @@
       </div>
     </li>
   <% else %>
-    <li class="nav-item" style="list-style: none;">
+    <li class="nav-item" style="list-style: none; padding-top: 20px;">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </li>
   <% end %>
@@ -28,7 +28,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
         <%= link_to "About", "#", class: "nav-link" %>
+      </li>
+
+
+      <li class="nav-item">
+        <%= link_to "Lastest Deals", products_path, class: "nav-link" %>
       </li>
 
       <li class="nav-item dropdown">

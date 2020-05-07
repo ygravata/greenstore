@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_product, only: [:show]
+
 
   # Create
 	def new
@@ -16,7 +18,6 @@ class ProductsController < ApplicationController
       render :new
     end
   end
-
 
   # Read
   def index
