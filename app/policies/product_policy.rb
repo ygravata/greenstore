@@ -8,6 +8,15 @@ class ProductPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    create?
+  end
+
+  def edit?
+    update?
+  end
+
+
   def create?
     true
   end

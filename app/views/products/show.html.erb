@@ -14,19 +14,13 @@
       <button>Add to the cart</button>
 
       <ul class="product-tools">
-        <li>
-          <% if policy(@product).edit? %>
-            <p> <%= link_to 'Edit', "" %> </p>
-          <% end %>
-        </li>
+        <% if policy(@product).edit? %>
+          <p> <%= link_to 'Edit', edit_product_path(@product) %> </p>
+        <% end %>
 
-        <li>
-          <% if policy(@product).destroy? %>
-            <p> <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
-          <% end %>
-        </li>
-      </div>
-
+        <% if policy(@product).destroy? %>
+          <p> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
+        <% end %>
     </div>
   </div>
 
