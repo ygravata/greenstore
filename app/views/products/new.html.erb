@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for @product do |f| %>
     <%= f.input :name %>
-    <%= f.input :category %>
+    <%= f.input :category, :collection => %w[Flower Edible Seed]%>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :quantity %>
