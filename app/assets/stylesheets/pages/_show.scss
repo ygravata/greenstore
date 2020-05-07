@@ -1,0 +1,26 @@
+.card-product-show {
+  margin-top: 16px;
+  overflow: hidden;
+  height: 300px;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.product-photo {
+  border-radius: 8px;
+  margin: 32px;
+  padding: 16px;
+  height: 40vh;
+  width: 300px;
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1518465444133-93542d08fdd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
+}
+
+.product-info {
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
