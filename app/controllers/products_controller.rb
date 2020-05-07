@@ -8,12 +8,14 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(product_params)
-      if @product.save
-      product_path(@product)
+    @product.user_id = 1
+    if @product.save
+      redirect_to root_path
     else
       render :new
     end
   end
+
 
   # Read
   def index
@@ -32,7 +34,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:name, :description, :price, :quantity, :category)
+		params.require(:product).permit(:name, :description, :price, :quantity, :category, :photo)
 	end
 
   def set_product
