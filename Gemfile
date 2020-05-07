@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# pundit
+gem 'pundit'
 # photo
 gem 'cloudinary', '~> 1.12.0'
 # devise gem
