@@ -12,7 +12,21 @@
       <p><%= @product.price %></p>
       <p><%= @product.description %></p>
       <button>Add to the cart</button>
+
+      <% if policy(@product).edit? %>
+        <p> <%= link_to 'Edit', "" %> </p>
+      <% end %>
+
+      <% if policy(Product).new? %>
+        <p> <%= link_to 'new', new_product_path %> </p>
+      <% end %>
+
+      <% if policy(@product).destroy? %>
+        <p> <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
+      <% end %>
+
     </div>
   </div>
+
 
 </div>
