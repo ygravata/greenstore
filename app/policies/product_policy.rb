@@ -12,17 +12,17 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
-  # def update?
-  #   user_is_owner?
-  # end
+  def update?
+    user_is_owner?
+  end
 
   def show?
     true
   end
 
-  # def destroy?
-  #   user_is_owner?
-  # end
+  def destroy?
+    user_is_owner?
+  end
 
   private
 

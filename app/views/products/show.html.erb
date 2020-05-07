@@ -2,9 +2,9 @@
 
   <div class="card-product-show">
 
-    <div class="product-photo">
-<!--       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
- -->    </div>
+
+    <div class="product-photo" style="background-image: url('<%= cl_image_path @product.photo.key, height: 300, width: 400, crop: :fill %>')">
+    </div>
 
     <div class="product-info">
       <h2><%= @product.name %></h2>
@@ -13,17 +13,19 @@
       <p><%= @product.description %></p>
       <button>Add to the cart</button>
 
-      <% if policy(@product).edit? %>
-        <p> <%= link_to 'Edit', "" %> </p>
-      <% end %>
+      <ul class="product-tools">
+        <li>
+          <% if policy(@product).edit? %>
+            <p> <%= link_to 'Edit', "" %> </p>
+          <% end %>
+        </li>
 
-      <% if policy(Product).new? %>
-        <p> <%= link_to 'new', new_product_path %> </p>
-      <% end %>
-
-      <% if policy(@product).destroy? %>
-        <p> <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
-      <% end %>
+        <li>
+          <% if policy(@product).destroy? %>
+            <p> <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
+          <% end %>
+        </li>
+      </div>
 
     </div>
   </div>
