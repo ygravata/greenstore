@@ -14,6 +14,18 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    authorize @product
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to product_path(@product)
+  end
+
+
   # Create
 	def new
    	@product = Product.new
@@ -30,6 +42,13 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
+  end
+
 
 	private
 
