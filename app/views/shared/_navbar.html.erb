@@ -1,51 +1,70 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
-  <a class="navbar-brand" href="#">
-    <img src="https://i.ibb.co/44f2f9B/green-store.png" alt="" width="400" height="90" style="margin-left: -45px">
-  </a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://i.ibb.co/44f2f9B/green-store.png", :style=>"margin-left: -45px; width:400px; :height:90px;" %>
+  <% end %>
+  <form class="form-inline my-2 my-lg-0" style="margin: 90px 80px 0px -20px">
+    <input class="form-control mr-sm-2" style="width: 600px;" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+  <% if user_signed_in? %>
+    <li class="nav-item dropdown" style="list-style: none;">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to "Action", "#", class: "dropdown-item" %>
+        <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </li>
+  <% else %>
+    <li class="nav-item" style="list-style: none;">
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    </li>
+  <% end %>
+</div>
+
+<div class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-            <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
-          </li>   
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              FLOWER
-            </a>
-             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" href="#">PRE-ROLLS</a>
-                 <a class="dropdown-item" href="#">DRIED FLOWER</a>
-                 <a class="dropdown-item" href="#">SEEDS</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              EDIBLES
-            </a>
-             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" href="#">CHOCOLATES</a>
-                 <a class="dropdown-item" href="#">BEVERAGES</a>
-                 <a class="dropdown-item" href="#">BAKED GOODS</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ACCESSORIES
-            </a>
-             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" href="#">ROLLING PAPERS</a>
-                 <a class="dropdown-item" href="#">GRINDERS</a>
-                 <a class="dropdown-item" href="#">BONGS & PIPES</a>
-            </div>
-          </li>
-          <form class="form-inline my-2 my-lg-0" style="margin: 90px">
-           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <i class="fas fa-shopping-cart"></i>
+        <%= link_to "About", "#", class: "nav-link" %>
+      </li>
+
+      <li class="nav-item dropdown">
+        <%= link_to "Flower", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Pre-Rolls", "#", class: "dropdown-item" %>
+            <%= link_to "Dried Flower", "#", class: "dropdown-item" %>
+            <%= link_to "Seeds", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <%= link_to "Edibles", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Chocolates", "#", class: "dropdown-item" %>
+            <%= link_to "Beverages", "#", class: "dropdown-item" %>
+            <%= link_to "Baked Goods", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <%= link_to "Accessories", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Rolling Papers", "#", class: "dropdown-item" %>
+            <%= link_to "Grinders", "#", class: "dropdown-item" %>
+            <%= link_to "Bongs & Pipes", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+
+      <div>
+        <%= link_to '#', class: "fas fa-shopping-cart" do %>
+        <% end %>
+      </div>
     </ul>
-   </div>
-</nav>
+  </div>
+</div>
+
+
 
