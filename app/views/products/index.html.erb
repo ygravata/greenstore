@@ -1,6 +1,19 @@
-<!-- <h1><%= params[:category].present? ? params[:category] : "All weed" %></h1> -->
-<% @products.each do |product| %>
-  <%= product.name %>
-  <%= product.price %>
-  <%= product.category %>
-<% end %>
+<div class="row justify-content-around">
+
+  <% @products.each do |product| %>
+    <div class="col-sm-2-md-3 m-1 p-2">
+
+        <div class="card text-center card-style">
+
+          <div style="width:260px; height:200px; background-image: url('<%= cl_image_path product.photo.key, height: 300, width: 400, crop: :fill %>')">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title"><%= link_to product.name, product_path(product), :id=>"card-link-style" %></h4>
+            <h4> <%= product.category %> </h2>
+            <p> R$ <%= product.price %> </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
