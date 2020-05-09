@@ -8,9 +8,8 @@
       <h3><%= @product.category %></h3>
       <p>Price: <%= @product.price %></p>
       <p>Description: <%= @product.description %></p>
-
     <ul class="product-tools">
-
+      <button>Add to cart</button>
       <% if policy(@product).edit? %>
         <button><%= link_to 'Edit', edit_product_path(@product) %></button>
       <% end %>
@@ -18,9 +17,7 @@
       <% if policy(@product).destroy? %>
         <button> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </button>
       <% end %>
-
       <button><%= link_to 'Add Review', new_product_review_path(@product) %></button>
-
     </ul>
     </div>
   </div>
