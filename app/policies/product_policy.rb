@@ -16,7 +16,6 @@ class ProductPolicy < ApplicationPolicy
     update?
   end
 
-
   def create?
     true
   end

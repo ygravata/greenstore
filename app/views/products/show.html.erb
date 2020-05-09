@@ -9,7 +9,7 @@
       <p>Description: <%= @product.description %></p>
       <p>Category: <%= @product.category %></p>
       <div class="container">
-          <%= simple_form_for [@product, @cart_product] do |f| %>
+          <%= simple_form_for @product do |f| %>
           <%= f.input :quantity %>
           <%= f.button :submit, "Add to Cart", :class => "btn btn-success"%>
           <% end %>
