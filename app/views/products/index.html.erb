@@ -2,9 +2,7 @@
 
   <% @products.each do |product| %>
     <div class="col-sm-2-md-3 m-1 p-2">
-
         <div class="card text-center card-style">
-
           <div style="width:260px; height:200px; background-image: url('<%= cl_image_path product.photo.key, height: 300, width: 400, crop: :fill %>')">
           </div>
           <div class="card-body">
@@ -13,7 +11,7 @@
             <p> R$ <%= product.price %> </p>
           </div>
         </div>
-      </div>
+    </div>
   <% end %>
 </div>
 

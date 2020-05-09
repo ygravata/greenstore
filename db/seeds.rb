@@ -16,7 +16,7 @@ array = %W[Flower Edible Seed]
 
 puts 'Creating products..'
 
-5.times do
+1.times do
   file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
   product = Product.new(
     user_id: 1,
