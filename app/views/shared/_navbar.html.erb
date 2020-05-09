@@ -1,73 +1,52 @@
 <div class="container">
-<div class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://i.ibb.co/44f2f9B/green-store.png", :style=>"margin-left: -45px; width:400px; :height:90px;" %>
-  <% end %>
-
   <div class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://i.ibb.co/44f2f9B/green-store.png", :style=>"margin-left: -45px; width:400px; :height:90px;" %>
+    <% end %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="navbar navbar-expand-lg navbar-light bg-light justify-content: space-between">
 
-      <li class="nav-item">
-        <%= link_to "About", "#", class: "nav-link" %>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "About", "#", class: "nav-link" %>
+        </li>
 
 
-      <li class="nav-item">
-        <%= link_to "Deals", products_path, class: "nav-link" %>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Products", products_path, class: "nav-link" %>
+        </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Flower", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Pre-Rolls", "#", class: "dropdown-item" %>
-            <%= link_to "Dried Flower", "#", class: "dropdown-item" %>
-            <%= link_to "Seeds", "#", class: "dropdown-item" %>
-        </div>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Flower", "#", :class=>"nav-link" %>
+        </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Edibles", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Chocolates", "#", class: "dropdown-item" %>
-            <%= link_to "Beverages", "#", class: "dropdown-item" %>
-            <%= link_to "Baked Goods", "#", class: "dropdown-item" %>
-        </div>
-      </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Accessories", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Rolling Papers", "#", class: "dropdown-item" %>
-            <%= link_to "Grinders", "#", class: "dropdown-item" %>
-            <%= link_to "Bongs & Pipes", "#", class: "dropdown-item" %>
-        </div>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Edibles", "#", :class=>"nav-link"  %>
+        </li>
 
-      <div>
-      </div>
-    </ul>
+        <li class="nav-item dropdown">
+          <%= link_to "Accessories", "#", :class=>"nav-link" %>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown" style="list-style: none;">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item" style="list-style: none;">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-      <%= link_to '#', class: "fas fa-shopping-cart" do %>
-      <% end %>
-
-
-</div>
-</div>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown" style="list-style: none;">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item" style="list-style: none;">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        <%= link_to '#', class: "fas fa-shopping-cart" do %>
+        <% end %>
+  </div>
 
