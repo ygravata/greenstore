@@ -14,3 +14,25 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-item {
+  margin-left: auto;
+}
+
+.fa-shopping-cart {
+  margin-right: 20px;
+}
+
+.sell-link {
+  margin-left: auto;
+  background-color: #738d76;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.sell-link:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #8ba189;
+}
