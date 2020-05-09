@@ -1,3 +1,6 @@
+.navbar {
+  padding: 0;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: #F4F4F4;
@@ -9,4 +12,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  margin-left: auto;
+}
+
+.fa-shopping-cart {
+  margin-right: 20px;
 }

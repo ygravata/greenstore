@@ -1,34 +1,35 @@
 <div class="container">
 
   <div class="card-product-show">
-
-
-    <div class="product-photo" style="background-image: url('<%= cl_image_path @product.photo.key, height: 300, width: 400, crop: :fill %>')">
+    <div class="product-photo" style="background-image: url('<%= cl_image_path @product.photo.key,  height: 400, width: 400, crop: :fill %>')">
     </div>
-    <%  %>
     <div class="product-info">
       <h2><%= @product.name %></h2>
-      <h3><%= @product.category %></h3>
-      <p><%= @product.price %></p>
-      <p><%= @product.description %></p>
-      <button>Add to the cart</button>
+      <h3>Price: <%= @product.price %></h3>
+      <p>Description: <%= @product.description %></p>
+      <p>Category: <%= @product.category %></p>
+
+
+
     <ul class="product-tools">
+      <button>Add to cart</button>
       <% if policy(@product).edit? %>
-        <p> <%= link_to 'Edit', edit_product_path(@product) %> </p>
+        <button><%= link_to 'Edit', edit_product_path(@product) %></button>
       <% end %>
 
       <% if policy(@product).destroy? %>
-        <p> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </p>
+        <button> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </button>
       <% end %>
-
-      <%= link_to 'Add Review', new_product_review_path(@product) %>
-      <% @product.reviews.each do |review| %>
-        <p><%= review.content %></p>
-        <hr>
-      <% end %>
+      <button><%= link_to 'Add Review', new_product_review_path(@product) %></button>
     </ul>
     </div>
   </div>
-
-
+  <div style="background-color: white; ">
+    <h3 style="text-align: center;">Reviews</h3>
+    <hr>
+     <% @product.reviews.each do |review| %>
+      <p style="margin-left: 30px;"><%= review.content %></p>
+      <hr>
+    <% end %>
+  </div>
 </div>
