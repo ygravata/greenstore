@@ -5,13 +5,20 @@
 
     <div class="product-photo" style="background-image: url('<%= cl_image_path @product.photo.key, height: 300, width: 400, crop: :fill %>')">
     </div>
-    <%  %>
+  
+    
     <div class="product-info">
       <h2><%= @product.name %></h2>
       <h3><%= @product.category %></h3>
       <p><%= @product.price %></p>
       <p><%= @product.description %></p>
-      <button>Add to the cart</button>
+      <div class="container">
+          <%= simple_form_for [@product, @cart_product] do |f| %>
+          <%= f.input :quantity %>
+          <%= f.button :submit, "Add to Cart", :class => "btn btn-success"%>
+          <% end %>
+      </div>
+      <div class="container">
     <ul class="product-tools">
       <% if policy(@product).edit? %>
         <p> <%= link_to 'Edit', edit_product_path(@product) %> </p>

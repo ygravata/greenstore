@@ -9,8 +9,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
   
-      <li class="nav-item">
-        <%= link_to "About", "#", class: "nav-link" %>
+      <li class="nav-item dropdown">
+        <%= link_to "About", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Who we are", "#", class: "dropdown-item" %>
+        </div>
       </li>
 
 
@@ -18,31 +21,16 @@
         <%= link_to "Lastest Deals", products_path, class: "nav-link" %>
       </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Flower", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Pre-Rolls", "#", class: "dropdown-item" %>
-            <%= link_to "Dried Flower", "#", class: "dropdown-item" %>
-            <%= link_to "Seeds", "#", class: "dropdown-item" %>
-        </div>
+      <li class="nav-item">
+        <%= link_to "Flower", "#", class: "nav-link" %> 
       </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Edibles", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Chocolates", "#", class: "dropdown-item" %>
-            <%= link_to "Beverages", "#", class: "dropdown-item" %>
-            <%= link_to "Baked Goods", "#", class: "dropdown-item" %>
-        </div>
+      <li class="nav-item">
+        <%= link_to "Edibles", "#", class: "nav-link" %>
       </li>
 
-      <li class="nav-item dropdown">
-        <%= link_to "Accessories", "#", :class=>"nav-link dropdown-toggle", :id=>"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Rolling Papers", "#", class: "dropdown-item" %>
-            <%= link_to "Grinders", "#", class: "dropdown-item" %>
-            <%= link_to "Bongs & Pipes", "#", class: "dropdown-item" %>
-        </div>
+      <li class="nav-item">
+        <%= link_to "Accessories", "#", class: "nav-link" %>
       </li>
 
       <div>
