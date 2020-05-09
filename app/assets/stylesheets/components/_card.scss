@@ -11,6 +11,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 100px;
 }
 
 .card-category:hover {
@@ -21,7 +22,9 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 32px;
+  // margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 // Smallest device
