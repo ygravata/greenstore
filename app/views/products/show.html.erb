@@ -5,9 +5,12 @@
     </div>
     <div class="product-info">
       <h2><%= @product.name %></h2>
-      <h3><%= @product.category %></h3>
-      <p>Price: <%= @product.price %></p>
+      <h3>Price: <%= @product.price %></h3>
       <p>Description: <%= @product.description %></p>
+      <p>Category: <%= @product.category %></p>
+
+
+
     <ul class="product-tools">
       <button>Add to cart</button>
       <% if policy(@product).edit? %>
