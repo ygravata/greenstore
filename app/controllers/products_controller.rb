@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product.user = current_user
   end
 
   def edit
