@@ -1,14 +1,11 @@
 class CartsController < ApplicationController
-	def show
-	end
-
 	
-	def edit
+	def index
+		@cart = current_user.carts.find_by_status("Active")
 	end
 
 	def update
 	end
 
-	def destroy
-	end
+	
 end
