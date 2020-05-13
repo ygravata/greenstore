@@ -1,7 +1,13 @@
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
+<div class="main-container">
+<% @cart.cart_products.each do |cart_product| %>
+	<div class="card-product col-sm-6 flex-grow: 1">
+	  <img src='<%= cl_image_path cart_product.product.photo.key%>'/>
+	  <div class="card-product-infos">
+	    <h2><%= cart_product.product.name %></h2>
+	    <p>Price: <%= cart_product.product.price %></p>
+	    <p>Quantity: <%= cart_product.quantity %></p>
+	    <p><strong>Total:</strong>R$ <%= cart_product.product.price * cart_product.quantity%></p>
+	  </div>	
+	</div>
+<% end %>
 </div>
