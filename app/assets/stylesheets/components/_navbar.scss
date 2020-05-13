@@ -1,10 +1,12 @@
 .navbar {
   padding: 0;
+  justify-content: space-around;
 }
 
 .navbar-lewagon {
-  justify-content: space-between;
+
   background: #F4F4F4;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,20 +21,68 @@
   margin-left: auto;
 }
 
+.fa-search {
+  margin-left: 10px;
+  height: 10px;
+}
+
 .fa-shopping-cart {
   margin-right: 20px;
+  margin-left: 20px;
 }
 
-.sell-link {
-  margin-left: auto;
-  background-color: #738d76;
-  text-decoration: none;
+.cta {
+  background-color: #1BCB7F;
   color: white;
-  padding: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
 }
 
-.sell-link:hover {
+.cta:hover {
   color: white;
-  text-decoration: none;
-  background-color: #8ba189;
+  background: #8ba189;
+  transition: background 0.3s ease;
 }
+
+// .sell-link {
+//   margin-left: auto;
+//   background-color: ;
+//   text-decoration: none;
+//   color: white;
+//   padding: 10px;
+// }
+
+// .sell-link:hover {
+//   color: white;
+//   text-decoration: none;
+//   background-color: #8ba189;
+// }
+
+.form-rounded {
+  border-radius: 4px;
+}
+
+.categories-inline {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  justify-content: center;
+  width: 900px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.categories-inline li {
+  padding: 2px 4px;
+  border-radius: 4px;
+
+}
+
+.categories-inline li a {
+  color: #a5a39a;
+  border: 1px solid #a5a39a;
+  border-radius: 4px;
+}
+
