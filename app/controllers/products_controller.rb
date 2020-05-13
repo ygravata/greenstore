@@ -4,10 +4,15 @@ class ProductsController < ApplicationController
 
   # Read
   def index
-    if params[:category].present?
-      @products = policy_scope(Product).where(category: params[:category]).order(created_at: :desc)
+    # if params[:category].present?
+    #   @products = policy_scope(Product).where(category: params[:category]).order(created_at: :desc)
+    # else
+    #   @products = policy_scope(Product).order(created_at: :desc)
+    # end
+    if params[:query].present?
+      @products = Product.search_by_name_category_description(params[:query]).order(created_at: :desc)
     else
-      @products = policy_scope(Product).order(created_at: :desc)
+      @products = Product.all.order(created_at: :desc)
     end
   end
 
