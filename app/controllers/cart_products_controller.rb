@@ -1,8 +1,8 @@
 class CartProductsController < ApplicationController
+
 	def create
 		@cart_product = CartProduct.new(cart_product_params)
  		@cart = cart_find
-
 
  		unless @cart
  			@cart = Cart.new(status: "Active", user: current_user)
@@ -10,14 +10,15 @@ class CartProductsController < ApplicationController
  		end
 
  		@cart_product.cart = @cart
- 		#if product já existe no cart_product 
- 				#update cart_product.product.quantite+= 1
- 			#else
- 		@cart_product.product = Product.find(params[:product_id]) 
+	 		# if @cart_product.product.find(params[:product_id]) 
+	 		# 	@cart_product.product.find(params[:product_id]).quantity += 1
+	 		# else
+	 		# 	@cart_product.product = Product.find(params[:product_id])
+	 		# end 
+	 	@cart_product.product = Product.find(params[:product_id])
 
  		authorize @cart_product
  		
-  	
   	if @cart_product.save 
     		redirect_to carts_path, notice: 'Product added to cart!'
  		end
