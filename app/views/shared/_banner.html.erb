@@ -3,16 +3,16 @@
   <div class="container">
     <h1>Connecting Demand and Supply</h1>
     <p>Exchanging Good Vibes</p>
-
-    <%= form_tag products_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a product"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-
+    <div class="btn">
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a product"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 </div>
