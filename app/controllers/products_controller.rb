@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # Read
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @cart_product = CartProduct.new 
   end
 
   def edit

@@ -3,19 +3,16 @@ class CartProductPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def new?
-    	create?
-  	end
-
-    def create?
-		true    	
-    end
+  def create?
+    
+	  record.cart.user == user    	
+  end
 
    #  private
 
   	# def user_is_owner?
    #  	record.user == user
   	# end
-  end
 end
