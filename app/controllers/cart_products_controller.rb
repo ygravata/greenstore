@@ -10,6 +10,9 @@ class CartProductsController < ApplicationController
  		end
 
  		@cart_product.cart = @cart
+ 		#if product já existe no cart_product 
+ 				#update cart_product.product.quantite+= 1
+ 			#else
  		@cart_product.product = Product.find(params[:product_id]) 
 
  		authorize @cart_product

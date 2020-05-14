@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   has_many :cart_products
   
   validates :name, presence: true
-  validates :category, presence: true, inclusion: { in: %w(Flower Edible Seed),
+  validates :category, presence: true, inclusion: { in: %w(Flower Edible Accessories),
     message:  "Choose one valid category!" }
   validates :description, presence: true, length: { maximum: 500 }
   validates :price, presence: true
