@@ -4,21 +4,21 @@
 </div>
 
 <div class="cards">
-  <%= link_to products_path(category: "new"), :style=>"text-decoration: none;" do %>
+  <%= link_to products_path(query: "Flower"), :style=>"text-decoration: none;" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1457573399415-1154bfe3ff71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80);" >
       Flowers
     </div>
   <% end %>
 
-  <%= link_to '#',:style=>"text-decoration: none;" do %>
+  <%= link_to products_path(query: "Edibles"),:style=>"text-decoration: none;" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1583516867196-ea9a73ecdc13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80);" >
       Edibles
     </div>
   <% end %>
 
-  <%= link_to '#',:style=>"text-decoration: none;" do %>
+  <%= link_to products_path(query: "Seed"),:style=>"text-decoration: none;" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);" >
-      Accessories
+      Seed
     </div>
   <% end %>
 </div>
