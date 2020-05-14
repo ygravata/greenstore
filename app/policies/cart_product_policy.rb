@@ -6,8 +6,11 @@ class CartProductPolicy < ApplicationPolicy
   end
 
   def create?
-    
 	  record.cart.user == user    	
+  end
+
+  def destroy?
+    record.cart.user == user      
   end
 
    #  private

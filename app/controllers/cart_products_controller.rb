@@ -10,11 +10,13 @@ class CartProductsController < ApplicationController
  		end
 
  		@cart_product.cart = @cart
-	 		# if @cart_product.product.find(params[:product_id]) 
-	 		# 	@cart_product.product.find(params[:product_id]).quantity += 1
-	 		# else
-	 		# 	@cart_product.product = Product.find(params[:product_id])
-	 		# end 
+ 		# cart_product = @cart_product.product.find(params[:product_id]) 
+	 	# 	if cart_product 
+	 	# 		@cart_product.product.find(params[:product_id]).quantity += 1
+	 	# 	else
+	 	# 		@cart_product.product = Product.find(params[:product_id])
+	 	# 	end 
+
 	 	@cart_product.product = Product.find(params[:product_id])
 
  		authorize @cart_product
@@ -23,6 +25,12 @@ class CartProductsController < ApplicationController
     		redirect_to carts_path, notice: 'Product added to cart!'
  		end
 	end
+
+	# def destroy
+	# 	@cart_product = CartProduct.find(params[:id])
+	# 	@cart_product.destroy
+	# 	redirect_to carts_path, notice: 'Product removed from cart'
+	# end
 
 
 	private

@@ -12,9 +12,11 @@ class CartsController < ApplicationController
 	end
 
 	def update
-		
-	end
+		@cart = current_user.carts.find_by_status("Active")
+    # @cart.update(task_params)
 
+    # redirect_to
+	end
 
 
 	
