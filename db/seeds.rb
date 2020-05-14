@@ -12,7 +12,7 @@ puts 'Cleaning database...'
 
 Product.destroy_all
 
-array = %W[Flower Edible Seed]
+array = %W[Flower Edible Accessories]
 images_array = %W[amala botanical brodeur garten gras grav lemercier lopez nanney photoweed weed]
 
 
