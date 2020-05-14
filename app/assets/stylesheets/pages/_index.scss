@@ -2,19 +2,7 @@
 @import "home";
 @import "show";
 
-.card-style{
-// width: 18rem;
-border: none;
-}
-
-#card-img{
-  // height:80px;
-}
-
-#card-title-style{
-
-}
-
-#card-link-style{
-  color: #30475e;
+#index-container {
+background-color: $mari-green;
+min-height: 55vh;
 }

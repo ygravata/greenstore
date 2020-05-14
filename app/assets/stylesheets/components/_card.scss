@@ -1,3 +1,4 @@
+// homepage
 .card-category {
   background-size: cover;
   background-position: center;
@@ -13,6 +14,82 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 100px;
 }
+
+
+// index page
+.card-style{
+border: none;
+height: 254px;
+background-color: $mari-dark-green;
+color:white;
+width: 232px;
+align-content: center;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0,0,0,0.3);
+color: white;
+  &:hover{
+    background-color: #F4F4F4;
+    color: $mari-dark-green;
+  }
+}
+
+.card-body {
+  // height: 200px;
+  // width: 100px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  top:16px;
+  // color: white;
+  padding: 0px;
+  margin-top: 12px;
+  h2 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 12px;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    margin: 0px;
+  }
+  p {
+    font-size: 22px;
+    margin: 0px;
+    margin-top: 4px;
+  }
+}
+.link_style{
+  color: white;
+  margin: 0px 0px 0px 0px;
+  font-size: 18px;
+  text-decoration: none;
+  &:hover {
+  text-decoration: none;
+  color: $mari-dark-green;
+  }
+}
+
+.index-card-img {
+  position: relative;
+  top:12px;
+  width:200px;
+  height:140px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+#card-img{
+  // height:80px;
+}
+
+#card-title-style{
+
+}
+
+#card-link-style{
+
+}
+
 
 .card-category:hover {
   text-decoration: none;

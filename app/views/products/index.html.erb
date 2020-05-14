@@ -1,15 +1,24 @@
-<div class="row justify-content-around">
+<% if @products.first.nil? %>
+  <h2>No results for: "<%= params[:query] %>"</h2>
+<% elsif params[:query]%>
+  <h2>Results for: "<%= params[:query] %>"</h2>
+<% end %>
+
+<div class="row justify-content-around" style="margin-left: 0px; margin-right: 0px;" id="index-container">
+
 
   <% @products.each do |product| %>
-    <div class="col-sm-2-md-3 m-1 p-2">
+    <div class="col-sm-2-md-6 m-2">
 
-        <div class="card text-center card-style">
+        <div class="card-style">
 
-          <div style="width:260px; height:200px; background-image: url('<%= cl_image_path product.photo.key, height: 300, width: 400, crop: :fill %>')">
+          <div class="index-card-img" style="background-size: cover; background-image: url('<%= cl_image_path product.photo.key, height: 300, width: 400, crop: :fill %>')">
           </div>
+
           <div class="card-body">
-            <h2 class="card-title"><%= link_to product.name, product_path(product), :id=>"card-link-style" %></h4>
+            <h2><%= link_to product.name.capitalize(), product_path(product), class: "link_style"%></h>
             <h4> <%= product.category %> </h2>
+            <!-- adicionar link para carrinho -->
             <p> R$ <%= product.price %> </p>
           </div>
         </div>
