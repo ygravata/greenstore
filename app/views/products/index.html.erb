@@ -1,4 +1,4 @@
-<% if @products.first.nil? %>
+<% if @products.empty? %>
   <h2>No results for: "<%= params[:query] %>"</h2>
 <% elsif params[:query]%>
   <h2>Results for: "<%= params[:query] %>"</h2>
