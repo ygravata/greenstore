@@ -7,18 +7,17 @@
 		    <h2><%= cart_product.product.name %></h2>
 		    <p>Price: <%= cart_product.product.price %></p>
 		    <p>Quantity: <%= cart_product.quantity %></p>
-		    <p><strong>Total:</strong>R$ <%= cart_product.product.price * cart_product.quantity%></p>
+		    <p><strong>Total:</strong>EU <%= cart_product.product.price * cart_product.quantity%></p>
 				<div>
-		    <i class="fas fa-trash text-right">
-		    	<%= link_to 'Delete', @cart_product, method: :delete, data: { confirm: 'Are you sure?'} %></i> 
+		    	<%= link_to "", cart_product, method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash text-right" %><
 		    </div>
 		  </div>	
 	</div>
 	<% end %>
 	<div class="col-12 col-lg-4 stick-top-right">
 		<h1>Finish your Order:</h1>
-			<h4>Your total is R$<%= @total %></h4>
-				<button class="btn btn-flat">Buy Now!</button>
+			<h4>Your total is EU <%= @total %></h4>
+				<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn btn-flat"%>
 				<button class="btn btn-outline-danger btn-sm">Clear Cart</button>
 			</div>
 		</div>

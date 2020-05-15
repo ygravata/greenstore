@@ -13,11 +13,15 @@ class CartsController < ApplicationController
 
 	def update
 		@cart = current_user.carts.find_by_status("Active")
-    # @cart.update(task_params)
-
-    # redirect_to
+		authorize @cart
+    @cart.update(cart_params)
+    redirect_to carts_path
 	end
 
+	private
 
+	def cart_params
+		params.require(:cart).permit(:status)
+	end
 	
 end
