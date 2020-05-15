@@ -15,6 +15,6 @@ class Product < ApplicationRecord
   pg_search_scope :search_by_name_category_description,
     against: [ :name, :category, :description ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true, any_word: true} # <-- now `superman batm` will return something!
     }
 end
