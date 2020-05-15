@@ -18,6 +18,7 @@ images_array = %W[amala botanical brodeur garten gras grav lemercier lopez nanne
 
 puts 'Creating products..'
 
+
 20.times do
   # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
   product = Product.new(
