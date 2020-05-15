@@ -1,7 +1,6 @@
 class CartProductsController < ApplicationController
 
 	def create
-		@cart_product = CartProduct.new(cart_product_params)
  		@cart = cart_find
 
  		unless @cart
@@ -9,19 +8,27 @@ class CartProductsController < ApplicationController
  			@cart.save
  		end
 
- 		@cart_product.cart = @cart
-	 		# if @cart_product.product.find(params[:product_id]) 
-	 		# 	@cart_product.product.find(params[:product_id]).quantity += 1
-	 		# else
-	 		# 	@cart_product.product = Product.find(params[:product_id])
-	 		# end 
-	 	@cart_product.product = Product.find(params[:product_id])
-
+ 		@cart_product = @cart.cart_products.find_by(product_id: params[:product_id])
+ 		if @cart_product
+ 			@cart_product.quantity += cart_product_params[:quantity].to_i
+	 	else
+	 		@cart_product = CartProduct.new(cart_product_params)
+	 		@cart_product.cart = @cart
+	 		@cart_product.product = Product.find(params[:product_id])
+	 	end
+	 	
  		authorize @cart_product
  		
   	if @cart_product.save 
     		redirect_to carts_path, notice: 'Product added to cart!'
  		end
+	end
+
+	def destroy
+		@cart_product = CartProduct.find(params[:id])
+		authorize @cart_product
+		@cart_product.destroy
+		redirect_to carts_path, notice: 'Product removed from cart'
 	end
 
 
