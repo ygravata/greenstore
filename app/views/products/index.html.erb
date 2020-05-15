@@ -1,28 +1,48 @@
-<% if @products.empty? %>
-  <h2>No results for: "<%= params[:query] %>"</h2>
-<% elsif params[:query]%>
-  <h2>Results for: "<%= params[:query] %>"</h2>
-<% end %>
+
+<div class="filter-bar" style="padding:8px 0px;">
+
+
+  <% if @products.empty? %>
+    <p>No results for: "<%= params[:query] %>"</p>
+  <% elsif params[:query]%>
+    <p>Results for: "<%= params[:query] %>"</p>
+  <% else %>
+    <p>Choose a Category:</p>
+  <% end %>
+  <div class="filter-buttons">
+    <%= link_to products_path(query: "Flower"),:style=>"text-decoration: none;" do %>
+      <div class="nav-link filter-item">
+        Flower
+      </div>
+    <% end %>
+    <%= link_to products_path(query: "Edible"),:style=>"text-decoration: none;" do %>
+      <div class="nav-link filter-item">
+        Edible
+      </div>
+    <% end %>
+    <%= link_to products_path(query: "Accessories"),:style=>"text-decoration: none;" do %>
+      <div class="nav-link filter-item">
+        Accessories
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <div class="row justify-content-around" style="margin-left: 0px; margin-right: 0px;" id="index-container">
-
-
   <% @products.each do |product| %>
     <div class="col-sm-2-md-6 m-2">
-
+      <%= link_to product_path(product), :class=>"link_style" do %>
         <div class="card-style">
-
           <div class="index-card-img" style="background-size: cover; background-image: url('<%= cl_image_path product.photo.key, height: 300, width: 400, crop: :fill %>')">
           </div>
-
           <div class="card-body">
-            <h2><%= link_to product.name.capitalize(), product_path(product), class: "link_style"%></h>
+            <h2><%= product.name.capitalize %></h2>
             <h4> <%= product.category %> </h2>
             <!-- adicionar link para carrinho -->
             <p> R$ <%= product.price %> </p>
           </div>
         </div>
+      <% end %>
       </div>
   <% end %>
 </div>
-
