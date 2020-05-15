@@ -30,6 +30,7 @@ color: white;
   &:hover{
     background-color: #F4F4F4;
     color: $mari-dark-green;
+    cursor:pointer;
   }
 }
 
@@ -43,6 +44,7 @@ color: white;
   // color: white;
   padding: 0px;
   margin-top: 12px;
+
   h2 {
     font-size: 16px;
   }
@@ -63,8 +65,9 @@ color: white;
   font-size: 18px;
   text-decoration: none;
   &:hover {
-  text-decoration: none;
   color: $mari-dark-green;
+  text-decoration: none;
+
   }
 }
 
