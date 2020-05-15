@@ -8,14 +8,37 @@ border: none;
 border-radius: 20px 40px 60px;
 }
 
-#card-img{
-  // height:80px;
+#index-container {
+background-color: $mari-green;
+min-height: 55vh;
 }
 
-#card-title-style{
-
+.filter-bar {
+  display:flex;
+  justify-content: space-between;
+  background-color: $mari-green;
+  p {
+    color:white;
+    font-size: 18px;
+    padding-left: 12px;
+    margin: 0px;
+    align-self: center;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+  }
 }
 
-#card-link-style{
-  color: #30475e;
+.filter-buttons {
+  display: flex;
+}
+
+.filter-item {
+  margin: 0px 2px;
+  background-color: $mari-dark-green;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  &:hover{
+    background-color: white;
+    color: $mari-dark-green;
+  }
 }

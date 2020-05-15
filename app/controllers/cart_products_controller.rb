@@ -1,34 +1,41 @@
 class CartProductsController < ApplicationController
-	def new
-		@cart_products = CartProduct.new()
-		authorize @cart_product
-	end
-
 
 	def create
-		@cart_product = CartProduct.new(cart_product_params)
-   		@cart = cart_find
+ 		@cart = cart_find
 
+ 		unless @cart
+ 			@cart = Cart.new(status: "Active", user: current_user)
+ 			@cart.save
+ 		end
 
-   		if @cart
-   			@cart_product.cart = @cart
-   		else
-   			@cart_product.cart = Cart.new(status: "Active")
-   		end
+ 		@cart_product = @cart.cart_products.find_by(product_id: params[:product_id])
+ 		if @cart_product
+ 			@cart_product.quantity += cart_product_params[:quantity].to_i
+	 	else
+	 		@cart_product = CartProduct.new(cart_product_params)
+	 		@cart_product.cart = @cart
+	 		@cart_product.product = Product.find(params[:product_id])
+	 	end
+	 	
+ 		authorize @cart_product
+ 		
+  	if @cart_product.save 
+    		redirect_to carts_path, notice: 'Product added to cart!'
+ 		end
+	end
 
-   		authorize @cart_product
-   		authorize @cart
-    	
-    	if @cart_product.save 
-      		redirect_to cart_path(@cart), notice: 'Product added to cart!'
-   		end
+	def destroy
+		@cart_product = CartProduct.find(params[:id])
+		authorize @cart_product
+		@cart_product.destroy
+		redirect_to carts_path, notice: 'Product removed from cart'
 	end
 
 
 	private
 
 	def cart_product_params
-		params.require(:cart_product).permit([:quantity, :product_id])
+		params.require(:cart_product).permit(:quantity)
 	end
 
 	def cart_find
