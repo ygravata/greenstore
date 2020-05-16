@@ -43,6 +43,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  align-items: center;
 }
 
 .cart-product .cart-product-infos {
@@ -75,4 +76,9 @@ text-align: center;
 
 .centralized .btn {
   text-align: center;
+}
+
+.centralized-cart {
+padding: 54px;
+text-align: center;
 }
