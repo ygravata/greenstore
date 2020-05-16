@@ -22,9 +22,9 @@
 				<div class="finish-order">
 					<h1>Finish your Order:</h1>
 						<h4>Your total is EU <%= @total %></h4>
-							<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn-xl btn-opossite-flat"%>
+							<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, data: { confirm: 'Proceed with your purchase?'},  class: "btn-xl btn-opossite-flat"%>
 
-							<%= link_to 'clear cart', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn btn-outline-danger btn-sm"%>
+							<%= link_to 'clear cart', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-danger btn-sm"%>
 				</div>
 	</div>
 </div>
