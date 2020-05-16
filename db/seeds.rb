@@ -24,7 +24,7 @@ puts 'Creating products..'
   product = Product.new(
     user_id: 1,
     name: Faker::Cannabis.buzzword.capitalize(),
-    description: Faker::Cannabis.health_benefit,
+    description: "Full of flavour, each batch of Pure Sunfarms’ Indica is chosen to deliver consistent potency and upfront aromatics, from the first flower to the last. Grown in a sunlight-filled high-tech greenhouse in British Columbia.",
     price: Faker::Number.decimal(l_digits: 2),
     quantity:Faker::Number.number(digits: 2),
     category: array.sample
