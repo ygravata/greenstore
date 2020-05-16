@@ -1,25 +1,29 @@
-<div class="container">
-	<div class="row">
-	<% @cart.cart_products.each do |cart_product| %>
-		<div class="card-product col-12 col-lg-8 justify-content: space-between">
-		  <img src='<%= cl_image_path cart_product.product.photo.key%>'/>
-		  <div class="card-product-infos">
-		    <h2><%= cart_product.product.name %></h2>
-		    <p>Price: <%= cart_product.product.price %></p>
-		    <p>Quantity: <%= cart_product.quantity %></p>
-		    <p><strong>Total:</strong>EU <%= cart_product.product.price * cart_product.quantity%></p>
-				<div>
-		    	<%= link_to "", cart_product, method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash text-right" %>
-		    </div>
-		  </div>	
+<div class="cart-container">
+
+	<div class="cart">
+
+		<% @cart.cart_products.each do |cart_product| %>
+			<div class="cart-product">
+			  <img src='<%= cl_image_path cart_product.product.photo.key%>'/>
+			  <div class="cart-product-infos">
+			    <h2><%= cart_product.product.name %></h2>
+				    <p> Price: <%= cart_product.product.price %></p>
+				    <p> Qtd: <%= cart_product.quantity %></p>
+				    <p><strong>Total</strong></p>
+				    <p>EU <%= cart_product.product.price * cart_product.quantity%></p>
+				    	<%= link_to "", cart_product, method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash" %>
+			  	</div>	
+			</div>
+		<% end %>
 	</div>
-	<% end %>
-	<div class="col-12 col-lg-4 stick-top-right">
+
+
+	<div class="finish-order">
 		<h1>Finish your Order:</h1>
 			<h4>Your total is EU <%= @total %></h4>
-				<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn btn-flat"%>
+				<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn-xl btn-flat"%>
 				<%= link_to 'clear cart', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, class: "btn btn-outline-danger btn-sm"%>
-			</div>
+			
 		</div>
 	</div>
 
