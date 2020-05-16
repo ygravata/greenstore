@@ -28,3 +28,16 @@
   font-weight: bold;
   border: 2px solid white;
 }
+
+.btn-opossite-flat {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1BCB7F;
+  transition: background 0.3s ease;
+}
+
+.btn-opossite-flat:hover {
+  background: #8ba189;
+  color: white;
+}

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     resources :cart_products, only: [:create]
   end
-  resources :carts, only: [:index, :update]
+  resources :carts, only: [:index, :update, :show]
   resources :cart_products, only: [:destroy]
 end
