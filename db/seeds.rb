@@ -10,6 +10,8 @@ require 'open-uri'
 
 puts 'Cleaning database...'
 
+CartProduct.destroy_all
+Cart.destroy_all
 Product.destroy_all
 
 array = %W[Flower Edible Accessories]
@@ -39,12 +41,13 @@ puts 'Creating products..'
   puts "Product #{product.id} created"
 end
 
+
 20.times do
   # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
   product = Product.new(
     user_id: 1,
     name: Faker::Cannabis.buzzword.capitalize(),
-    description: Faker::Cannabis.health_benefit,
+    description: "Full of flavour, each batch of Pure Sunfarms’ Indica is chosen to deliver consistent potency and upfront aromatics, from the first flower to the last. Grown in a sunlight-filled high-tech greenhouse in British Columbia.",
     price: Faker::Number.decimal(l_digits: 2),
     quantity:Faker::Number.number(digits: 2),
     category: array.sample
@@ -58,6 +61,45 @@ end
 
   puts "Product #{product.id} created"
 end
+
+20.times do
+  # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
+  product = Product.new(
+    user_id: 1,
+    name: Faker::Cannabis.buzzword.capitalize(),
+    description: "Full of flavour, each batch of Pure Sunfarms’ Indica is chosen to deliver consistent potency and upfront aromatics, from the first flower to the last. Grown in a sunlight-filled high-tech greenhouse in British Columbia.",
+    price: Faker::Number.decimal(l_digits: 2),
+    quantity:Faker::Number.number(digits: 2),
+    category: array.sample
+  )
+  product.save!
+
+  product.photo.attach(io: File.open(Rails.root + "app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+
+  # product.photo.attach(io: File.open("/app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+  # product.photo.attach(io: file, filename: 'some-image.jpg')
+
+  puts "Product #{product.id} created"
+end
+# 20.times do
+#   # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
+#   product = Product.new(
+#     user_id: 1,
+#     name: Faker::Cannabis.buzzword.capitalize(),
+#     description: Faker::Cannabis.health_benefit,
+#     price: Faker::Number.decimal(l_digits: 2),
+#     quantity:Faker::Number.number(digits: 2),
+#     category: array.sample
+#   )
+#   product.save!
+
+#   product.photo.attach(io: File.open(Rails.root + "app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+
+#   # product.photo.attach(io: File.open("/app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+#   # product.photo.attach(io: file, filename: 'some-image.jpg')
+
+#   puts "Product #{product.id} created"
+# end
 
 
 # puts 'Creating products..'

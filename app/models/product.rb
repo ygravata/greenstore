@@ -10,7 +10,6 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { maximum: 250 , message:  "Maximum of 250 character" }
   validates :price, presence: true
   validates :quantity, presence: true
-  validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_name_category_description,
