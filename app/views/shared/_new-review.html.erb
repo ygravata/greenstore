@@ -1,0 +1,6 @@
+<div class="container">
+<%= simple_form_for [@product, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Add review", class: "btn review-show-button mb-2 offset-sm-10" %>
+<% end %>
+</div>
