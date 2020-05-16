@@ -2,7 +2,7 @@
 <head>
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #8ba189;
     }
   </style>
 </head>
@@ -10,36 +10,36 @@
   <div class="container">
     <div class="card-product-show">
       <div class="product-photo" style="background-image: url('<%= cl_image_path @product.photo.key,  height: 400, width: 400, crop: :fill %>')">
-      </div>
-      <div class="product-info">
-        <h2><%= @product.name %></h2>
-        <p>Description: <%= @product.description %></p>
-        <p>Category: <%= @product.category %></p>
-        <%= simple_form_for @product do |f| %>
-        <%= f.input :quantity %>
-        <%= f.button :submit, "Add to Cart", :class => "btn btn-success"%>
-        <% end %>
-        <div class="price">
-          <h3>$: <%= @product.price %></h3>
-        </div>
-        <div class="product-tools">
-          <% if policy(@product).edit? %>
-          <button class="toolsButton"><%= link_to 'Edit', edit_product_path(@product) %></button>
+        <div class="product-info">
+          <h2><%= @product.name %></h2>
+          <p>Description: <%= @product.description %></p>
+          <p>Category: <%= @product.category %></p>
+          <%= simple_form_for @product do |f| %>
+          <%= f.input :quantity %>
+          <%= f.button :submit, "Add to Cart", :class => "btn btn-success"%>
           <% end %>
-          <% if policy(@product).destroy? %>
-          <button class="toolsButton"> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </button>
-          <% end %>
-          <button class="toolsButton"><%= link_to 'Add Review', new_product_review_path(@product) %></button>
+          <div class="price">
+            <h3>$: <%= @product.price %></h3>
+          </div>
+          <div class="product-tools">
+            <% if policy(@product).edit? %>
+            <button class="toolsButton"><%= link_to 'Edit', edit_product_path(@product) %></button>
+            <% end %>
+            <% if policy(@product).destroy? %>
+            <button class="toolsButton"> <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?'} %> </button>
+            <% end %>
+            <button class="toolsButton"><%= link_to 'Add Review', new_product_review_path(@product) %></button>
+          </div>
         </div>
       </div>
     </div>
     <div class="reviews">
-          <h4>reviews</h4>
-          <hr>
-          <h4><% @product.reviews.each do |review| %></h4>
-          <p><%= review.content %></p>
-          <hr>
-          <% end %>
-        </div>
+      <h4>reviews</h4>
+      <hr>
+      <h4><% @product.reviews.each do |review| %></h4>
+      <p><%= review.content %></p>
+      <hr>
+      <% end %>
+    </div>
   </body>
   </html>
