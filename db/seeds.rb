@@ -18,7 +18,28 @@ images_array = %W[amala botanical brodeur garten gras grav lemercier lopez nanne
 
 puts 'Creating products..'
 
-40.times do
+
+20.times do
+  # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
+  product = Product.new(
+    user_id: 1,
+    name: Faker::Cannabis.buzzword.capitalize(),
+    description: Faker::Cannabis.health_benefit,
+    price: Faker::Number.decimal(l_digits: 2),
+    quantity:Faker::Number.number(digits: 2),
+    category: array.sample
+  )
+  product.save!
+
+  product.photo.attach(io: File.open(Rails.root + "app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+
+  # product.photo.attach(io: File.open("/app/assets/images/#{images_array.sample}.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+  # product.photo.attach(io: file, filename: 'some-image.jpg')
+
+  puts "Product #{product.id} created"
+end
+
+20.times do
   # file = open('https://images.unsplash.com/photo-1543642178-9c11a28b9631')
   product = Product.new(
     user_id: 1,
