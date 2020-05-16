@@ -15,13 +15,14 @@
   overflow: hidden;
   height: 240px;
   // width: 300px;
-  background: white;
+  background: #dddddd;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: left;
   margin-bottom: 20px;
   // flex-grow: 1;
+  border-radius: 8px;
 }
 
 .cart-product img {
@@ -58,3 +59,20 @@
 // .trash-bin {
 //   justify-content: right;
 // }
+
+.container-cart {
+  padding: 16px;
+}
+
+.centralized {
+padding: 8px;
+text-align: center;
+}
+
+.centralized h1 {
+  text-align: center;
+}
+
+.centralized .btn {
+  text-align: center;
+}
