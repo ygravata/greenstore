@@ -6,12 +6,16 @@
 }
 
 .form-style {
-  width: 532px;
+  width: 538px;
+  padding: 16px;
+  border-radius: 8px;
   color: white;
+  background-color:$mari-dark-green;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 .new-product-button {
-  background-color:$mari-dark-green;
+  background-color:$mari-green;
   color: white;
   border-radius: 4px;
   &:hover{
