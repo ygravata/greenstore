@@ -15,7 +15,12 @@ class CartsController < ApplicationController
 		@cart = current_user.carts.find_by_status("Active")
 		authorize @cart
     @cart.update(cart_params)
-    redirect_to root_path
+    redirect_to cart_path #duvidaa
+	end
+
+	def show
+		@cart = current_user.carts.last
+		authorize @cart
 	end
 
 	private

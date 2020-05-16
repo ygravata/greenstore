@@ -31,12 +31,7 @@
   margin-left: 20px;
 }
 
-.cta {
-  background-color: #1BCB7F;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-}
+
 
 .cta:hover {
   color: white;
@@ -60,6 +55,18 @@
 
 .form-rounded {
   border-radius: 4px;
+}
+
+.pad {
+  padding: 20px;
+}
+
+.form-control {
+  width: 400px;
+}
+
+.search-margin {
+  margin-left: 90px;
 }
 
 

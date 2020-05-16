@@ -5,9 +5,14 @@
   <% elsif params[:query]%>
     <p>Results for: "<%= params[:query] %>"</p>
   <% else %>
-    <p>Choose a Category:</p>
+    <p>Choose your products</p>
   <% end %>
   <div class="filter-buttons">
+     <%= link_to products_path, :style=>"text-decoration: none;" do %>
+      <div class="nav-link filter-item">
+        All
+      </div>
+    <% end %>
     <%= link_to products_path(query: "Flower"),:style=>"text-decoration: none;" do %>
       <div class="nav-link filter-item">
         Flower
