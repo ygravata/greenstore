@@ -11,7 +11,7 @@
 							    <p> Price: <%= cart_product.product.price %></p>
 							    <p> Qtd: <%= cart_product.quantity %></p>
 							    <p><strong>Total</strong></p>
-							    <p>EU <%= cart_product.product.price * cart_product.quantity%></p>
+							    <p>$ <%= cart_product.product.price * cart_product.quantity%></p>
 							    	<%= link_to "", cart_product, method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash" %>
 						  	</div>	
 						</div>
@@ -21,7 +21,7 @@
 
 				<div class="finish-order">
 					<h1>Finish your Order:</h1>
-						<h4>Your total is EU <%= @total %></h4>
+						<h4>Your total is $ <%= @total %></h4>
 							<%= link_to 'Buy Now!', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, data: { confirm: 'Proceed with your purchase?'},  class: "btn-xl btn-opossite-flat"%>
 
 							<%= link_to 'clear cart', cart_path(@cart, cart: {status: "Inactive"}) , method: :patch, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-danger btn-sm"%>
