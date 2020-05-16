@@ -1,7 +1,5 @@
 
 <div class="filter-bar" style="padding:8px 0px;">
-
-
   <% if @products.empty? %>
     <p>No results for: "<%= params[:query] %>"</p>
   <% elsif params[:query]%>
@@ -28,7 +26,7 @@
   </div>
 </div>
 
-<div class="row justify-content-around" style="margin-left: 0px; margin-right: 0px;" id="index-container">
+<div class="row justify-content-around" style="margin-left: 0px; margin-right: 0px;">
   <% @products.each do |product| %>
     <div class="col-sm-2-md-6 m-2">
       <%= link_to product_path(product), :class=>"link_style" do %>

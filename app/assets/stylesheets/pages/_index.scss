@@ -1,14 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "new-product";
 
-.card-style{
-// width: 18rem;
-border: none;
-border-radius: 20px 40px 60px;
-}
-
-#index-container {
+.main-container {
 background-color: $mari-green;
 min-height: 55vh;
 }

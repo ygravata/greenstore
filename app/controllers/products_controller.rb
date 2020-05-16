@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @cart_product = CartProduct.new 
+    @cart_product = CartProduct.new
   end
 
   def edit

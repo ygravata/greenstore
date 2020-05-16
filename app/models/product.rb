@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { maximum: 500 }
   validates :price, presence: true
   validates :quantity, presence: true
+  validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_name_category_description,
