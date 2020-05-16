@@ -1,0 +1,24 @@
+<div class="centralized">
+	<h1>Thanks for Shopping with us!</h1>
+	<div>
+	<%= link_to "Shop More", products_path, class: "btn btn-opossite-flat"%>
+	</div>
+</div>
+	<div class="cart-container">		
+			<div class="row justify-content-around" style="margin-left: 0px; margin-right: 0px;">
+					<% @cart.cart_products.each do |cart_product| %>
+	    		<div class="col-sm-2-md-6 m-2">
+		        <div class="card-style">
+		          <div class="index-card-img" style="background-size: cover; background-image: url('<%= cl_image_path cart_product.product.photo.key, height: 300, width: 400, crop: :fill %>')">
+		          </div>
+		          <div class="card-body">
+		            <h2><%= cart_product.product.name %></h2>
+		            <h4> <%= cart_product.product.category %> </h4>
+		           <!--  <p> R$ <%= cart_product.product.price %> </p>
+		            <p> Qtd <%= cart_product.quantity %> </p> -->
+		          </div>
+		        </div>
+		      <% end %>
+					</div>
+			</div>
+	</div>
