@@ -2,10 +2,11 @@
 @import "home";
 @import "show";
 @import "new-product";
+@import "show";
 
 .main-container {
 background-color: $mari-green;
-min-height: 55vh;
+min-height: 78vh;
 }
 
 .filter-bar {

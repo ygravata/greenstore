@@ -6,15 +6,13 @@
     <% end %>
     <div class="d-flex search-margin">
       <%= form_tag products_path, method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control form-rounded", placeholder: "What product are you looking for?" %>
+          <%= text_field_tag :query, params[:query], class: "form-control form-rounded teste", placeholder: "What product are you looking for?" %>
       <% end %>
       <%= submit_tag "Search", class: "btn-login form-rounded" %>
     </div>
    <!--  <input class="form-control form-rounded search-bar" style="width: 400px;" type="search" placeholder="What product are you looking for?" aria-label="Search">
     <%= link_to '#', class: "fas fa-search" do %>
         <% end %> -->
-
-
 
      <% if user_signed_in? %>
 
@@ -32,7 +30,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link btn-login" %>
           </li>
         <% end %>
-        <%= link_to carts_path, class: "fas fa-shopping-cart" do %>
+        <%= link_to carts_path, class: "fas fa-shopping-cart", style:"color:#586f56;" do %>
         <% end %>
 
   </div>

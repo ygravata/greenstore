@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: %w(Flower Edible Accessories),
     message:  "Choose one valid category!" }
-  validates :description, presence: true, length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 250 , message:  "Maximum of 250 character" }
   validates :price, presence: true
   validates :quantity, presence: true
   validates :photo, presence: true
