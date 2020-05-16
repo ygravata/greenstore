@@ -6,7 +6,7 @@
     <% end %>
     <div class="d-flex search-margin">
       <%= form_tag products_path, method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control form-rounded", placeholder: "What product are you looking for?" %>
+          <%= text_field_tag :query, params[:query], class: "form-control form-rounded teste", placeholder: "What product are you looking for?" %>
       <% end %>
       <%= submit_tag "Search", class: "btn-login form-rounded" %>
     </div>
