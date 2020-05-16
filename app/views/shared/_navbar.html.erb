@@ -4,9 +4,18 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://i.ibb.co/44f2f9B/green-store.png", :style=>"margin-left: 10px; width:300px; :height:80px;" %>
     <% end %>
-    <input class="form-control form-rounded search-bar" style="width: 400px;" type="search" placeholder="What product are you looking for?" aria-label="Search">
+    <div class="d-flex search-margin">
+      <%= form_tag products_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control form-rounded", placeholder: "What product are you looking for?" %>
+      <% end %>
+      <%= submit_tag "Search", class: "btn-login form-rounded" %>
+    </div>
+   <!--  <input class="form-control form-rounded search-bar" style="width: 400px;" type="search" placeholder="What product are you looking for?" aria-label="Search">
     <%= link_to '#', class: "fas fa-search" do %>
-        <% end %>
+        <% end %> -->
+
+
+
      <% if user_signed_in? %>
 
 
@@ -20,7 +29,7 @@
           </li>
         <% else %>
           <li class="nav-item" style="list-style: none;">
-            <%= link_to "Login", new_user_session_path, class: "nav-link cta" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link btn-login" %>
           </li>
         <% end %>
         <%= link_to carts_path, class: "fas fa-shopping-cart" do %>
