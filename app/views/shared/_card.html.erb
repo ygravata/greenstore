@@ -1,7 +1,5 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
- <%= link_to 'Sell your products', new_product_path, :style=>"text-decoration: none; color: white" %>
- <!--  <button type="button" class="btn btn-light">List your products here!</button> -->
-</div>
+<h2 style="text-align: center; margin-top: 20px; font-weight: bold;">Shop by categories</h2>
+
 
 <div class="cards">
   <%= link_to products_path(query: "Flower"), :style=>"text-decoration: none;" do %>
@@ -22,3 +20,4 @@
     </div>
   <% end %>
 </div>
+
